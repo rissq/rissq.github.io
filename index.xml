@@ -6,10 +6,47 @@
     <description>Recent content on RISSQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Project contributors</title>
+      <link>/people/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/people/</guid>
+      <description>Principal Investigator Emilio L. Cano
+ Internships Manu Alfaro
+Juan
+ </description>
+    </item>
+    
+    <item>
+      <title>Project supporters</title>
+      <link>/supporters/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/supporters/</guid>
+      <description>Companies  Academic  </description>
+    </item>
+    
+    <item>
+      <title>RISSQ Packages</title>
+      <link>/packages/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/packages/</guid>
+      <description>Common infrastructure Common structures, classes
+ Statistical methods Statistical Process Control: Control Charts, Capability Analysis
+Measurement Systems Analysis: Type I, Crossed, Nested, Unbalanced
+Acceptance Sampling
+Data sets
+Shiny App
+Input/Output interfaces: file import, export, etc.
+ </description>
+    </item>
     
     <item>
       <title>RISSQ Project</title>
@@ -26,8 +63,8 @@
       <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>This is the website for the project RISSQ (R Infrastructure for Statistical Standards on Quality). The project was started by the author of the SixSigma R package author, Emilio L. Cano1.
- Emilio L. Cano, Statistician. Associate Professor at the Faculty of Law and Social Sciences of the University of Castilla-la Mancha (UCLM), as well as research scientist at the Institute for Regional Development (IDR) of the UCLM. Emilio is member of the national standardisation technical committee TC66 - statistical methods at UNE (Spanish member of ISO) and trainer at the Spanish association for quality (AEC).</description>
+      <description>This is the website for the RISSQ project (R Infrastructure for Statistical Standards on Quality). The project was started by the author of the SixSigma R package author, Emilio L. Cano1. Check the updated list of supporters and contributors.
+ Emilio L. Cano, Statistician. Associate Professor at the Faculty of Law and Social Sciences of the University of Castilla-la Mancha (UCLM), as well as research scientist at the Institute for Regional Development (IDR) of the UCLM.</description>
     </item>
     
   </channel>

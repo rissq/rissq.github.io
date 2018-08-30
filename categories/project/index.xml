@@ -6,10 +6,19 @@
     <description>Recent content in Project on RISSQ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Project supporters</title>
+      <link>/supporters/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/supporters/</guid>
+      <description>Companies  Academic  </description>
+    </item>
     
     <item>
       <title>RISSQ Project</title>

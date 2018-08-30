@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Website on RISSQ</title>
+    <link>/categories/website/</link>
+    <description>Recent content in Website on RISSQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/website/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project contributors</title>
+      <link>/people/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/people/</guid>
+      <description>Principal Investigator Emilio L. Cano
+ Internships Manu Alfaro
+Juan
+ </description>
+    </item>
+    
+    <item>
+      <title>Project supporters</title>
+      <link>/supporters/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/supporters/</guid>
+      <description>Companies  Academic  </description>
+    </item>
+    
+    <item>
+      <title>RISSQ Packages</title>
+      <link>/packages/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/packages/</guid>
+      <description>Common infrastructure Common structures, classes
+ Statistical methods Statistical Process Control: Control Charts, Capability Analysis
+Measurement Systems Analysis: Type I, Crossed, Nested, Unbalanced
+Acceptance Sampling
+Data sets
+Shiny App
+Input/Output interfaces: file import, export, etc.
+ </description>
+    </item>
+    
+  </channel>
+</rss>

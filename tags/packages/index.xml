@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Packages on RISSQ</title>
+    <link>/tags/packages/</link>
+    <description>Recent content in Packages on RISSQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/packages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RISSQ Packages</title>
+      <link>/packages/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/packages/</guid>
+      <description>Common infrastructure Common structures, classes
+ Statistical methods Statistical Process Control: Control Charts, Capability Analysis
+Measurement Systems Analysis: Type I, Crossed, Nested, Unbalanced
+Acceptance Sampling
+Data sets
+Shiny App
+Input/Output interfaces: file import, export, etc.
+ </description>
+    </item>
+    
+  </channel>
+</rss>

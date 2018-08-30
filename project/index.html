@@ -48,6 +48,8 @@
     
     <li><a href="/project/">Project</a></li>
     
+    <li><a href="/supporters/">Supporters</a></li>
+    
   </ul>
 </nav>
 
@@ -76,49 +78,50 @@ in many companies R is being used thanks to a handful of R-enthusiastic
 practitioners working there.</p>
 <p><strong>Statistical methods for quality control and improvement are basically general statistical methods</strong>
 applied to industry. Thus, the use of <em>base</em> R in industrial environments
-should be natural<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. However, R face the
+should be natural, as the R software applied to industry standards provides the flexibility
+to implement new methods quickly, and could not only mimic the <em>standard</em> commercial software, but
+improve it, speeding up innovation. However, R face the
 same drawbacks that other business applications. On the one hand, the lack
 of a sort of <em>seamless</em> Graphical User Interface (GUI) for standardised tasks
 is a barrier to use R by non-statistically-skilled professionals. We know that
-this is not optimal<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>,
+this is not optimal (one should know what the software does, not just <em>click and see</em>),
 but it is also true that, in many cases, the statistical tools are just <strong>standardised</strong>
 procedures and it is enough for the sake of the business to interpret the
-outputs<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>
+outputs by some engineer, manager, or alike,
 given the correct input. On the other hand,
 the specifics of the quality control methods, for example related to the
-way things are named, or how to present the results, often need the modification
-of the base functions in order to present the results in an understandable way
+way things are named, or how to present the results, it is often needed to adapt
+the base functions in order to present the results in an understandable way
 for the experts in the matter. Sometimes this is very easy just writing a
 function that wraps base functions. Other times, more complex software
 development is needed, for example via R packages.</p>
-<div class="figure"><span id="fig:qcc"></span>
-<img src="/project_files/figure-html/qcc-1.png" alt="A control chart produced with the qcc package." width="576" />
-<p class="caption">
-Figure 1: A control chart produced with the qcc package.
-</p>
-</div>
 <p>Some packages
 that cover some quality control and improvement topics are available at CRAN.
-The <strong>qcc</strong>
-package is probably the first contact a quality control practitioner has with R.
+The <code>qcc</code>
+package <span class="citation">[1]</span> is probably the first contact a quality control practitioner has with R.
 Its functions to produce quality control charts are well valued by
-practitioners<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Other R packages<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
+practitioners (see Fig. <a href="#fig:qcc">1</a>). Other R packages like <code>qualityTools</code> <span class="citation">[2]</span>,
+<code>qcr</code> <span class="citation">[3]</span>, <code>qicharts</code> <span class="citation">[4]</span>, <code>SixSigma</code> <span class="citation">[5]</span>,
+or <code>AcceptanceSampling</code> <span class="citation">[6]</span>, among others,
 are available for different quality control and improvement tasks.</p>
-<p><strong>The seminal idea for this proposal</strong> actually arose in 2011 from the interest
-of this proposal’s author on the topic during his Masters Studies. The Masters thesis <span class="citation">[@cano2011masterthesis]</span>
+<div class="figure" style="text-align: center"><span id="fig:qcc"></span>
+<img src="/project_files/figure-html/qcc-1.png" alt="A control chart produced with the `qcc` package." width="576" />
+<p class="caption">
+Figure 1: A control chart produced with the <code>qcc</code> package.
+</p>
+</div>
+<p><strong>The seminal idea for this proposal</strong> actually arose in 2011 from my interest
+on the topic during my Masters Studies. The Masters thesis <span class="citation">[7]</span>
 paved the way for a continuous work on the topic since then, including a
 non-stopping learning about the real needs of industry. A manuscript entitled
 “An Introduction to Six Sigma Tools With R” was submitted to the R Journal.
 It was rejected, but,
 far from being discouraging, that provided new inputs and insights for further
 work. In fact, the rejected paper became a chapter of the book “Six Sigma with R”
-<span class="citation">[@cano2013sixsigma]</span> published later together with
-the <strong>SixSigma</strong> package.
-Some of the comments by one of the anonymous reviewers provide relevant
-input for this proposal^[
-_(…) The author ends stating that the advantage of R is the adjustability and the possibility to adjust the procedures by changing parameters. Unfortunately, Quality Management and Six Sigma in a classical notion are methodologies where companies rely for most of the time on <strong>heavily standardized procedures</strong> that where developed decades ago. It should also be mentioned that there are many companies with Six Sigma initiatives and certification according to ISO 9001:2008. The latter requires <strong>verified software</strong> as section 7.6 of ISO 9001:2008 states: ‘Confirmation of the ability of computer software to satisfy the intended application would typically include its verification and configuration management to maintain its suitability for use’.</p>
-<p><strong>Minitab for instance implements strictly according to MSA Manual and ISO’s as well as other company guidelines such as VDA</strong> (German Association of the Automotive Industry) ed. 5. In addition, Minitab (de facto standard) subsumes the relevant methods under the term Quality Tools with Six Sigma being just the current project management philosophy._
-]. At the beginning, this review puzzled us the authors as R enthusiasts.
+<span class="citation">[8]</span> published later together with
+the <code>SixSigma</code> package.
+Some of the comments by one of the anonymous reviewers provided relevant
+input for this project<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. At the beginning, this review puzzled us the authors as R enthusiasts.
 But during the subsequent years
 working on the topic, I eventually think that something must be done from the
 R ecosystem to convince industry.</p>
@@ -127,20 +130,40 @@ software developed for industry should take into account industry standards.
 Ideally, computational statistics developers should participate in the development of statistical standards.
 Thus, the aim of this project is to build the needed R Infrastructure with
 the language and procedures of industry, i.e., the Standards. Moreover, the
-RISSQ will help industry in the verification process<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.</p>
+RISSQ will help industry in the verification process, i.e., verify that the software
+does what the Standards say. By two means: through the Open Sourced code, and through
+the automatic verification of the numerical examples in the Standards.</p>
 </div>
 <div id="the-plan" class="section level1">
 <h1>The Plan</h1>
-<p>This proposal is the evolution of previous submissions the ISC“)`.
-It was proposed<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> as a”first stage&quot; project and after
-ISC feedback, it has been reshaped to fit the aim of the current call for proposals.</p>
+<p>The RISSQ project was proposed twice to the Infrastructure Steering Committee (ISC) of the <a href="https://www.r-consortium.org/">R Consortium</a> looking for funding for its development.
+The ISC supports projects that broadly help the R community.
+This support might be software development, developing new teaching
+materials, documenting best practices, promoting R to new audiences,
+standardising APIs or doing research. This proposal tackles several of
+those topics, and <strong>Statistical methods for quality control and improvement</strong>
+is a topic in which commercial
+software is still dominant. This project could
+be relevant for spreading R among industry and business by filling the existing
+gaps. <strong>International standards</strong>, well known and accepted by the industry,
+will be a catalyst for adopting R. However, the proposal did not
+convince the committee that the
+project would impact a sufficiently broad segment of the R Community.</p>
+<p>Nontheless, the project is clearly of interest for companies and practitioners.
+Industry users of the <code>SixSigma</code> package have sent feedback supporting the project,
+and a letter of interest was sent by Philips Lighting<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>. The project has also being outlined in several presentations<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> receiving encouraging comments. Check the updated list of <a href="/supporters">supporters</a>. Thus, I have decided to start the project with my own resources (mainly, time and will) and the aid of internship students (unpaid, until funds come). Check the updated list of <a href="/people">contributors</a>. Next, the inital work plan is shown, even though we are running the project in a sort of freestyle.</p>
 <p><strong>The work plan is organised in 4 Work Packages</strong> (WP) with disaggregated tasks.
 All WPs finish in verifiable Milestones. The project is planned to be
-completed in one year (M1–M12). The Gantt Chart below summarizes the timing.
-<img src="/project_files/figure-html/fig-fullwidth-1.png" width="1728" /></p>
-<p>In summary<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>, the project starts gathering the “Standards Library”, i.e., the identified international
-standards<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>
-containing methods to be implemented in R<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>.
+completed in two years (M1–M24). The Gantt Chart below summarizes the timing.</p>
+<p><img src="/project_files/figure-html/fig-fullwidth-1.png" width="100%" /></p>
+<p>In summary<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>, the project starts gathering the “Standards Library”, i.e., the identified international
+standards from ISO Technical Committee 69 (Applications of statistical methods)
+and AIAG (Automotive Industry Action Group)
+containing methods to be implemented in R, e.g., (number of documents
+in parenthesis): AIAG MSA (Measurement Systems Analysis) and SPC (Statistical Process Control)
+Manuals (2);
+ISO 7870 series, control charts (9); ISO 22514 series, capability analysis (9);
+ISO 5725 (5), 11648 (2) and 11843 (7) Series, Measurement methods and results (TC 69/SC 6), Acceptance Sampling (TC 69/SC 5).
 Then, before implementing
 methods, the basic infrastructure is to be developed, i.e., a git project, the data structures,
 classes, functions common features, verification process, a Shiny App and
@@ -158,28 +181,202 @@ standardised methods. When not in contradiction with the standards, already exis
 functions in the R base distribution will be recycled. This will result
 on an API that can be consumed: (1) by the RISSQ shiny App, which will be
 used not only for demonstration, but also as an in-house downloadable
-solution<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>;
+solution, And customizable by R experts and/or companies;
 and (2) by third parties,
 developers, and companies that want to build new solutions upon the base layer
 of the infrastructure. In addition to the people directly involved (see below),
-a group of stakeholders<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>
+a group of stakeholders<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>
 are willing to collaborate with the project providing
 real data sets and feedback.
-The table below shows a summary of the tasks to be carried out<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>.</p>
-
+Table <a href="#tab:tasks">1</a> shows a summary of the tasks to be carried out<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.</p>
+<table>
+<caption><span id="tab:tasks">Table 1: </span>RISSQ project tasks</caption>
+<thead>
+<tr class="header">
+<th align="left">Task</th>
+<th align="left">Task title</th>
+<th align="left">starts</th>
+<th align="left">ends</th>
+<th align="right">hours</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">T1.1</td>
+<td align="left">Standards’ Library building</td>
+<td align="left">M1</td>
+<td align="left">M1</td>
+<td align="right">21</td>
+</tr>
+<tr class="even">
+<td align="left">T1.2</td>
+<td align="left">Configure R Studio project, github repo, mail list, and webpage</td>
+<td align="left">M1</td>
+<td align="left">M1</td>
+<td align="right">23</td>
+</tr>
+<tr class="odd">
+<td align="left">T1.3</td>
+<td align="left">Implement quality data standard</td>
+<td align="left">M1</td>
+<td align="left">M1</td>
+<td align="right">30</td>
+</tr>
+<tr class="even">
+<td align="left">T1.4</td>
+<td align="left">Define and document classes and generic methods</td>
+<td align="left">M1</td>
+<td align="left">M2</td>
+<td align="right">58</td>
+</tr>
+<tr class="odd">
+<td align="left">T1.5</td>
+<td align="left">Define and document standards’ verification process</td>
+<td align="left">M2</td>
+<td align="left">M3</td>
+<td align="right">82</td>
+</tr>
+<tr class="even">
+<td align="left">T1.6</td>
+<td align="left">Define and document functions common structure</td>
+<td align="left">M2</td>
+<td align="left">M3</td>
+<td align="right">53</td>
+</tr>
+<tr class="odd">
+<td align="left">T1.7</td>
+<td align="left">Build shiny basic demo</td>
+<td align="left">M3</td>
+<td align="left">M3</td>
+<td align="right">48</td>
+</tr>
+<tr class="even">
+<td align="left">T2.1</td>
+<td align="left">Implementation of Control Charts Standards</td>
+<td align="left">M4</td>
+<td align="left">M6</td>
+<td align="right">350</td>
+</tr>
+<tr class="odd">
+<td align="left">T2.2</td>
+<td align="left">Implementation of Capability Analysis Standards</td>
+<td align="left">M7</td>
+<td align="left">M9</td>
+<td align="right">308</td>
+</tr>
+<tr class="even">
+<td align="left">T2.3</td>
+<td align="left">Implementation of Measurement Systems Analysis Standards</td>
+<td align="left">M10</td>
+<td align="left">M14</td>
+<td align="right">520</td>
+</tr>
+<tr class="odd">
+<td align="left">T2.4</td>
+<td align="left">Implementation of Acceptance Sampling Standards</td>
+<td align="left">M15</td>
+<td align="left">M19</td>
+<td align="right">513</td>
+</tr>
+<tr class="even">
+<td align="left">T2.5</td>
+<td align="left">Analysis and Implementation of other techniques Standards</td>
+<td align="left">M20</td>
+<td align="left">M21</td>
+<td align="right">171</td>
+</tr>
+<tr class="odd">
+<td align="left">T2.6</td>
+<td align="left">github major releases (at least for each group)</td>
+<td align="left">M4</td>
+<td align="left">M21</td>
+<td align="right">48</td>
+</tr>
+<tr class="even">
+<td align="left">T3.1</td>
+<td align="left">Validation of implemented methods</td>
+<td align="left">M7</td>
+<td align="left">M24</td>
+<td align="right">360</td>
+</tr>
+<tr class="odd">
+<td align="left">T3.2</td>
+<td align="left">Releases to CRAN</td>
+<td align="left">M8</td>
+<td align="left">M24</td>
+<td align="right">120</td>
+</tr>
+<tr class="even">
+<td align="left">T3.3</td>
+<td align="left">Shiny UI design for each method (validation)</td>
+<td align="left">M10</td>
+<td align="left">M24</td>
+<td align="right">66</td>
+</tr>
+<tr class="odd">
+<td align="left">T3.4</td>
+<td align="left">Shiny UI design for each method (new data)</td>
+<td align="left">M11</td>
+<td align="left">M24</td>
+<td align="right">66</td>
+</tr>
+<tr class="even">
+<td align="left">T3.3</td>
+<td align="left">Minor Releases to github</td>
+<td align="left">M21</td>
+<td align="left">M24</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td align="left">T4.1</td>
+<td align="left">WP1 Training and coordination</td>
+<td align="left">M1</td>
+<td align="left">M3</td>
+<td align="right">154</td>
+</tr>
+<tr class="even">
+<td align="left">T4.2</td>
+<td align="left">WP1 reporting and dissemination</td>
+<td align="left">M4</td>
+<td align="left">M4</td>
+<td align="right">20</td>
+</tr>
+<tr class="odd">
+<td align="left">T4.3</td>
+<td align="left">WP2 training and coordination</td>
+<td align="left">M4</td>
+<td align="left">M21</td>
+<td align="right">231</td>
+</tr>
+<tr class="even">
+<td align="left">T4.4</td>
+<td align="left">WP2 reporting and dissemination</td>
+<td align="left">M7</td>
+<td align="left">M21</td>
+<td align="right">102</td>
+</tr>
+<tr class="odd">
+<td align="left">T4.5</td>
+<td align="left">WP3 training and coordination</td>
+<td align="left">M7</td>
+<td align="left">M24</td>
+<td align="right">168</td>
+</tr>
+</tbody>
+</table>
 <p><strong>The more likely failure mode for the project is not getting funded</strong>.
-In the event of the lack of resources, I will continue developing the <strong>SixSigma</strong>
-package trying to implement the standards approach<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>
+In the event of the lack of resources, I will continue developing the <code>SixSigma</code>
+package trying to implement the standards approach<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>
 along with the users feedback.
 Apart from that, the project can
 be threaten by the insufficient expertise of the researcher to be contracted.
 In that case, I will allocate more hours from my time for training and development.
 Finally, some intellectual property issues could arise. I will mitigate this
 risk by checking with the standardisation committee I am involved each new version.</p>
-<p><strong>The resources needed for the project</strong> are gathered in the table below.
+<p><strong>The resources needed for the project</strong> are gathered in Table <a href="#tab:resources">2</a>.
 Two roles will participate in the work: Senior Researcher (SR) and Junior Researcher (JR).
-SR planned work will be mainly done by the author of the proposal, with the support of
-the <a href="https://www.uclm.es/organos/vic_investigacion/GruposUCLM/grupos.aspx?gr=293&amp;inf=per">research group team at UCLM</a><a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.
+SR planned work will be mainly done by the project leader, with the support of
+the <a href="https://previa.uclm.es/varios/catalogoinves/grupos.aspx?gr=293&amp;inf=rch">research group team at UCLM</a><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.
 A pre-doc contract will be offered for contracting a
 PhD Student to do the JR planned work before the stay at Philips Lighting.
 The offer will be disseminated over the
@@ -188,13 +385,15 @@ with the gender gap. Dissemination is an important topic for the success of the 
 We plan to attend, not only R/Stats conferences,
 but also Standards/Industry events, which will be crucial for the adoption of the infrastructure.
 Indirect costs complete the project budget, according to the rules of the University of
-Castilla-La Mancha<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a></p>
+Castilla-La Mancha<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a></p>
 <table>
+<caption><span id="tab:resources">Table 2: </span>RISSQ project planned resources</caption>
 <thead>
 <tr class="header">
 <th align="left">Resource</th>
-<th align="right">ISC Request (EUR)</th>
-<th align="right">Other funding</th>
+<th align="right">Year1 (EUR)</th>
+<th align="right">Year2 (EUR)</th>
+<th align="right">Total (EUR)</th>
 </tr>
 </thead>
 <tbody>
@@ -202,19 +401,23 @@ Castilla-La Mancha<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup
 <td align="left">ISO TC69 Standards subscription</td>
 <td align="right">2700</td>
 <td align="right">3250</td>
+<td align="right">5950</td>
 </tr>
 <tr class="even">
 <td align="left">AIAG Manuals acquisition</td>
 <td align="right">300</td>
 <td align="right">0</td>
+<td align="right">300</td>
 </tr>
 <tr class="odd">
 <td align="left">Shiny server</td>
 <td align="right">440</td>
 <td align="right">440</td>
+<td align="right">880</td>
 </tr>
 <tr class="even">
 <td align="left">github</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 </tr>
@@ -222,84 +425,103 @@ Castilla-La Mancha<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup
 <td align="left">Development laptop</td>
 <td align="right">1099</td>
 <td align="right">0</td>
+<td align="right">1099</td>
 </tr>
 <tr class="even">
 <td align="left">Senior researchers</td>
 <td align="right">7274</td>
 <td align="right">4728</td>
+<td align="right">12001</td>
 </tr>
 <tr class="odd">
 <td align="left">junior researcher</td>
 <td align="right">15757</td>
 <td align="right">15757</td>
+<td align="right">31514</td>
 </tr>
 <tr class="even">
 <td align="left">R/Stats conferences</td>
 <td align="right">1000</td>
 <td align="right">3000</td>
+<td align="right">4000</td>
 </tr>
 <tr class="odd">
 <td align="left">ISO/Industry events</td>
 <td align="right">1000</td>
 <td align="right">3000</td>
+<td align="right">4000</td>
 </tr>
 <tr class="even">
 <td align="left">Total direct costs</td>
 <td align="right">29570</td>
 <td align="right">30175</td>
+<td align="right">59745</td>
 </tr>
 <tr class="odd">
 <td align="left">Indirect costs (21%)</td>
 <td align="right">6210</td>
 <td align="right">6337</td>
+<td align="right">12546</td>
 </tr>
 <tr class="even">
 <td align="left">Total cost</td>
 <td align="right">35780</td>
 <td align="right">36512</td>
+<td align="right">72291</td>
 </tr>
 </tbody>
 </table>
-<p><strong>The ISC can help with more than money</strong>.
+<p><strong>Non-financial support is also welcome</strong>.
 Beyond the dissemination to the R ecosystem, it is important for the project
 success to reach industrial stakeholders. A first and easy step is
-bringing the project to the attention of companies that already are <em>with</em> R<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>. Another possible
+bringing the project to the attention of companies that already are <em>with</em> R<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>. Another possible
 contribution would be to support the participation
-in the standardisation committees. In particular, the R Consortium could be
+in the standardisation committees. In particular, the R community could be
 represented in the Technical Committee ISO/TC69 (and subcommittees) not only
 to implement the standards on the software, but also to contribute to the
-establishment of sound statistical standards for industry.
-In addition to the funding of the R consortium, further resources will be
-pursued.</p>
+establishment of sound statistical standards for industry.</p>
 </div>
 <div id="dissemination" class="section level1">
 <h1>Dissemination</h1>
-<p><strong>The project will be public</strong> at github<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
+<p><strong>The project will be public</strong> at github<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.
 The licence for this project will be the same as the one for R itself. A
 website, mailing list and twitter account will be setup. Blog posts will be sent to the
-R Consortium blog, and sent to relevant stakeholders<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.
+R Consortium blog, and sent to relevant stakeholders<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.
 The results will be explained in publishable
-working papers<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.
+working papers<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>.
 The results of the
-project will be presented at international conferences<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>.</p>
-<div id="funding" class="section level2">
-<h2>Funding</h2>
-<p>The Infrastructure Steering Committee (ISC) at the
-<a href="https://www.r-consortium.org/">R Consortium</a>
-supports projects that broadly help the R community.
-This support might be software development, developing new teaching
-materials, documenting best practices, promoting R to new audiences,
-standardising APIs or doing research<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>.</p>
-<p><img src="RC.png" /><!-- --></p>
-<p>The R consortium ISC aims to “select projects that are most likely to impact the most people”.
-<strong>statistical methods for quality control and improvement</strong>
-is a topic in which commercial
-software is still dominant. This document presents a proposal for funding a project that could
-be relevant for spreading R among industry and business by filling the existing
-gaps. <strong>International standards</strong>, well known and accepted by the industry,
-will be a catalyst for adopting R.</p>
-<p>RCOSORTIUM<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>.
-All the budget is allocated to People<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>.</p>
+project will be presented at international conferences<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>.</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-R-qcc">
+<p>[1] L. Scrucca, Qcc: Quality control charts, 2014. <a href="https://CRAN.R-project.org/package=qcc" class="uri">https://CRAN.R-project.org/package=qcc</a>.</p>
+</div>
+<div id="ref-R-qualityTools">
+<p>[2] T. Roth, QualityTools: Statistical methods for quality science, 2016. <a href="https://CRAN.R-project.org/package=qualityTools" class="uri">https://CRAN.R-project.org/package=qualityTools</a>.</p>
+</div>
+<div id="ref-R-qcr">
+<p>[3] M. Flores, Qcr: Quality control review, 2016. <a href="https://CRAN.R-project.org/package=qcr" class="uri">https://CRAN.R-project.org/package=qcr</a>.</p>
+</div>
+<div id="ref-R-qicharts">
+<p>[4] J. Anhoej, Qicharts: Quality improvement charts, 2016. <a href="https://CRAN.R-project.org/package=qicharts" class="uri">https://CRAN.R-project.org/package=qicharts</a>.</p>
+</div>
+<div id="ref-R-SixSigma">
+<p>[5] E.L. Cano, J.M. Moguerza, M. Prieto, A. Redchuk, SixSigma: Six sigma tools for quality control and improvement, 2018. <a href="https://CRAN.R-project.org/package=SixSigma" class="uri">https://CRAN.R-project.org/package=SixSigma</a>.</p>
+</div>
+<div id="ref-R-AcceptanceSampling">
+<p>[6] A. Kiermeier, AcceptanceSampling: Creation and evaluation of acceptance sampling plans, 2016. <a href="https://CRAN.R-project.org/package=AcceptanceSampling" class="uri">https://CRAN.R-project.org/package=AcceptanceSampling</a>.</p>
+</div>
+<div id="ref-cano2011masterthesis">
+<p>[7] E.L. Cano, An introduction to quality control with R, Master’s thesis, Rey Juan Carlos University, 2011. <a href="http://eciencia.urjc.es/handle/10115/5794" class="uri">http://eciencia.urjc.es/handle/10115/5794</a>.</p>
+</div>
+<div id="ref-cano2013sixsigma">
+<p>[8] E.L. Cano, J.M. Moguerza, A. Redchuk, Six sigma with r. Statistical engineering for process improvement, Springer, New York, 2012.</p>
+</div>
+<div id="ref-cano2015qcr">
+<p>[9] E.L. Cano, J.M. Moguerza, M. Prieto, Quality control with r. An iso standards approach, Springer, 2015.</p>
+</div>
 </div>
 </div>
 <div class="footnotes">
@@ -308,68 +530,37 @@ All the budget is allocated to People<a href="#fn26" class="footnote-ref" id="fn
 <li id="fn1"><p>Not only in research and academic environments but also
 in practical applications.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>Nowadays,
-Minitab<sup>©</sup> is,
-by far, the favorite for practitioners and trainers.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>R software for industry standards provides the flexibility
-to implement new methods quickly, and could not only mimic the <em>standard</em> commercial software, but
-improve it, speeding up innovation.<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>One should know what the software does, not just <em>click and see</em>.<a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>by some engineer, manager, or alike.<a href="#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>likely because what is produced is very familiar to them according to their
-experience with other software packages.<a href="#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p>Like <strong>qualityTools</strong>,
-<strong>qicharts</strong>, <strong>SixSigma</strong>,
-or <strong>AcceptanceSampling</strong>, among others.<a href="#fnref7" class="footnote-back">↩</a></p></li>
-<li id="fn8"><p>i.e., verify that the software
-does what the Standards say. By two means: through the Open Sourced code, and through
-the automatic verification of the numerical examples in the Standards.<a href="#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p>Former proposal: &quot;iStandaRds: R Framework for Industry Standards&quot;.<a href="#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>Details are not provided in this document. Nevertheless, a complete plan
-with the tasks details (description and hours per role and month) has been prepared.<a href="#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>From ISO Technical Committee 69 (Applications of statistical methods)
-and AIAG (Automotive Industry Action Group).<a href="#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p>Namely (number of documents
-in parenthesis): AIAG MSA (Measurement Systems Analysis) and SPC (Statistical Process Control)
-Manuals (2);
-ISO 7870 series, control charts (9); ISO 22514 series, capability analysis (9);
-ISO 5725 (5), 11648 (2) and 11843 (7) Series, Measurement methods and results<a href="#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p>And customizable by R experts and/or companies.<a href="#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p>Including academic researchers like Virgilio Gómez-Rubio,
-and industrial practitioners from companies like Philips (NL), Honeywell (USA),
-or u-blox (CH). A list with contact details is part of the full project plan.<a href="#fnref14" class="footnote-back">↩</a></p></li>
-<li id="fn15"><p>The first
-digit of the task code is the WP number.<a href="#fnref15" class="footnote-back">↩</a></p></li>
-<li id="fn16"><p>This can take ages, but I will not give up.<a href="#fnref16" class="footnote-back">↩</a></p></li>
-<li id="fn17"><p>Include the authors of the <strong>adabag</strong> package (Esteban
-Alfaro, Matías Gámez and Noelia García) and José Luis Alfaro (quality control researcher).<a href="#fnref17" class="footnote-back">↩</a></p></li>
-<li id="fn18"><p>All
-the costs are based on actual numbers and rules at the University of Castilla-la Mancha.
-A total of 1674 hours in the tasks tables above are split into 1450 for JR
-and 224 for SR<a href="#fnref18" class="footnote-back">↩</a></p></li>
-<li id="fn19"><p>In the list of
+Minitab<sup>©</sup> is probably the favourite for practitioners and trainers.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><em>(…) The author ends stating that the advantage of R is the adjustability and the possibility to adjust the procedures by changing parameters. Unfortunately, Quality Management and Six Sigma in a classical notion are methodologies where companies rely for most of the time on <strong>heavily standardized procedures</strong> that where developed decades ago. It should also be mentioned that there are many companies with Six Sigma initiatives and certification according to ISO 9001:2008. The latter requires <strong>verified software</strong> as section 7.6 of ISO 9001:2008 states: ‘Confirmation of the ability of computer software to satisfy the intended application would typically include its verification and configuration management to maintain its suitability for use’. <strong>Minitab for instance implements strictly according to MSA Manual and ISO’s as well as other company guidelines such as VDA</strong> (German Association of the Automotive Industry) ed. 5. In addition, Minitab (de facto standard) subsumes the relevant methods under the term Quality Tools with Six Sigma being just the current project management philosophy.</em><a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Includes an offer to host a student in the company to work in the project.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>See <a href="http://emilio.lcano.com/p/enbis17">ENBIS-18</a> and <a href="http://emilio.lcano.com/p/enbis-webinar-18">free webinar</a> presentations.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>Details are not provided in this document. Nevertheless, a complete plan
+with the tasks details (description and hours per role and month) has been prepared.<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Including academic researchers and industrial practitioners from companies like Philips (NL), Honeywell (USA),
+or u-blox (CH). A list with contact details is part of the full project plan.<a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>The first
+digit of the task code is the WP number.<a href="#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>This can take ages, but I will not give up.<a href="#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn10"><p>Include the authors of the R <code>adabag</code> package (Esteban
+Alfaro, Matías Gámez and Noelia García) and José Luis Alfaro (quality control researcher).<a href="#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>All
+costs are based on actual numbers and rules at the University of Castilla-la Mancha.
+A total of 3500 hours in the tasks tables above are split into 3072 for JR
+and 528 for SR.<a href="#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>In the list of
 <a href="https://www.r-project.org/foundation/donors.html">R Foundation Members &amp; Supporters</a>
 there are companies as AT&amp;T, eoda, or Shell that are very likely interested
 in the results of this project. Examples of other companies that might be interested
 and could be contacted
 are Toyota, General Electric, or Airbus, just to mention some of the more relevant
 ones. Ideally, AT&amp;T would be a sort of “patron” of this project as the “father” of both R and
-modern Quality Control <span class="citation">[@cano2015qcr]</span>.<a href="#fnref19" class="footnote-back">↩</a></p></li>
-<li id="fn20"><p>Except documents protected by intellectual property.<a href="#fnref20" class="footnote-back">↩</a></p></li>
-<li id="fn21"><p>Including The World of Statistics (<a href="http://www.worldofstatistics.org/" class="uri">http://www.worldofstatistics.org/</a>)<a href="#fnref21" class="footnote-back">↩</a></p></li>
-<li id="fn22"><p>At least two, to be eventually submitted to the R Journal.<a href="#fnref22" class="footnote-back">↩</a></p></li>
-<li id="fn23"><p>(1)R conferences, e.g., use R!,
+modern Quality Control <span class="citation">[9]</span>.<a href="#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>Except documents protected by intellectual property.<a href="#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>Including The World of Statistics (<a href="http://www.worldofstatistics.org/" class="uri">http://www.worldofstatistics.org/</a>)<a href="#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>At least two, to be eventually submitted to the R Journal.<a href="#fnref15" class="footnote-back">↩</a></p></li>
+<li id="fn16"><p>(1) R conferences, e.g., use R!,
 rstudio::conf. (2) Conferences related to statistical methods for quality control and improvement,
-e.g., ASQ conferences (<em>Quality and Improvement</em> or <em>Six Sigma and Lean</em>); AIAG Events; ENBIS conferences (<a href="http://www.enbis.org">European Network for Business and Industrial Statistics</a>); INFORMS Annual Meeting (<a href="http://www.informs.org" class="uri">http://www.informs.org</a>).<a href="#fnref23" class="footnote-back">↩</a></p></li>
-<li id="fn24"><p>This proposal tackles several of
-those topics.<a href="#fnref24" class="footnote-back">↩</a></p></li>
-<li id="fn25"><p>
-Additional financial support has become available since the previous proposal,
-so the requested funds from the ISC has been lowered, fitting the current call.
-In particular, the Philips Lighting company could host the JR during a period
-within the project duration and provide the needed resources (see the <strong>letter of interest</strong>). Other costs, e.g., for dissemination,
-have been assumed
-to be funded by the own resources of the research group at the university.<a href="#fnref25" class="footnote-back">↩</a></p></li>
-<li id="fn26"><p>As the ISC expects.<a href="#fnref26" class="footnote-back">↩</a></p></li>
+e.g., ASQ conferences (<em>Quality and Improvement</em> or <em>Six Sigma and Lean</em>); AIAG Events; ENBIS conferences (<a href="http://www.enbis.org">European Network for Business and Industrial Statistics</a>); INFORMS Annual Meeting (<a href="http://www.informs.org" class="uri">http://www.informs.org</a>).<a href="#fnref16" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 

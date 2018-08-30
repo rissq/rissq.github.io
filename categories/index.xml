@@ -11,9 +11,27 @@
     
     
     <item>
+      <title>Packages</title>
+      <link>/categories/packages/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/packages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>People</title>
+      <link>/categories/people/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/people/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Project</title>
       <link>/categories/project/</link>
-      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/project/</guid>
       <description></description>
@@ -25,6 +43,15 @@
       <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Website</title>
+      <link>/categories/website/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/website/</guid>
       <description></description>
     </item>
     
