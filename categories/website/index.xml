@@ -29,7 +29,8 @@ Juan
       <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/supporters/</guid>
-      <description>Companies  Academic  </description>
+      <description>Companies Thanks to Luc Castermans, Developer Manager at Philips Lightning for providing a letter of interest.
+ Academic  </description>
     </item>
     
     <item>
@@ -39,12 +40,12 @@ Juan
       
       <guid>/packages/</guid>
       <description>Common infrastructure Common structures, classes
- Statistical methods Statistical Process Control: Control Charts, Capability Analysis
-Measurement Systems Analysis: Type I, Crossed, Nested, Unbalanced
-Acceptance Sampling
 Data sets
 Shiny App
 Input/Output interfaces: file import, export, etc.
+ Statistical methods Statistical Process Control: Control Charts, Capability Analysis
+Measurement Systems Analysis: Type I, Crossed, Nested, Unbalanced
+Acceptance Sampling
  </description>
     </item>
     

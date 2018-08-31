@@ -18,12 +18,12 @@
       
       <guid>/packages/</guid>
       <description>Common infrastructure Common structures, classes
- Statistical methods Statistical Process Control: Control Charts, Capability Analysis
-Measurement Systems Analysis: Type I, Crossed, Nested, Unbalanced
-Acceptance Sampling
 Data sets
 Shiny App
 Input/Output interfaces: file import, export, etc.
+ Statistical methods Statistical Process Control: Control Charts, Capability Analysis
+Measurement Systems Analysis: Type I, Crossed, Nested, Unbalanced
+Acceptance Sampling
  </description>
     </item>
     
